@@ -1,0 +1,17 @@
+[ ] Modal del carrito
+[ ] Cuando buscamos mal en el input se rompe
+[ ] Falta hacer las peticiones al iniciar sesion y al crear la cuenta
+[ ] Falta hacer las redirecciones (verificar si hay un usuario logueado antes de madnar al carrito/my purchases)
+[ ] Debe contener un contador para que el usuario seleccione cuántos productos desea comprar.
+[ ] cambiar el icono por un texto de LOGIN que nos redirija al componente para loguearse
+[ ] el componente LOGIN debe redireccionar al de crear cuenta si el usuario selecciona Sing Up
+[ ] En “/products/:id” debe haber un contador para que el usuario pueda elegir la cantidad del producto que quiera agregar al carrito (10pts).
+[ ] Modal que muestre los productos del carrito con un botón para comprarlo (10pts).
+
+RETOS OPCIONALES
+
+[ ]Hacer un filtro por precio en la ruta raíz “/”
+[ ]Colocar botones para retirar los productos del carrito
+[ ]Agregar una opción para modificar la cantidad llevada en los productos del carrito
+[ ]Agregar una ruta pública “/signup” donde el usuario pueda crear una cuenta !! CONECTAR LOS ENDPOINTS
+[ ]Agregar una ruta privada “/user” donde el usuario pueda ver sus datos

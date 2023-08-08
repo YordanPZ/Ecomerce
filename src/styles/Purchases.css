@@ -1,0 +1,30 @@
+.main__purchases{
+    margin: 3rem 4rem;
+}
+.purchase__info{
+    color: black;
+    background-color: rgba(255, 255, 255, 0.403);
+    padding: 2rem;
+}
+.purchase__price-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.purchases__list{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.purchase__date{
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+.purchase__line{
+    margin: 0 0 1rem 0;
+    border: 1px solid rgba(0, 0, 0, 0.305);
+}
+.purchase__title{
+    font-size: 1.6rem;
+}

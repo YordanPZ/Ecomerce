@@ -1,0 +1,25 @@
+*,*::after,*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #242424;
+  color: white;
+  font-family: 'Assistant', sans-serif;
+  background-image: url(/Product.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body h1 {
+  font-family: 'Varela Round', sans-serif;
+}
+ul{
+  list-style: none;
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
