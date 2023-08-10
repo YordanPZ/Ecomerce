@@ -1,12 +1,31 @@
+import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
+import axios from "axios"
 import "../styles/Login.css"
 import "../styles/SingUp.css"
 import { useForm } from "react-hook-form"
+import { setIsLoading } from "../store/slices/isLoadingSlice"
+import { toast } from "sonner"
 
 function SingUp() {
   const { register, handleSubmit } = useForm()
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const submit = (data) => {
-    console.log(data)
+    dispatch(setIsLoading(true))
+
+    axios
+      .post("https://e-commerce-api-v2.academlo.tech/api/v1/users", data)
+      .then(() => {
+        toast.success("Usuario creado correctamente")
+        navigate("/login")
+      })
+      .catch((err) => {
+        console.log(err)
+        alert("Credenciales incorrectas")
+      })
+      .finally(() => dispatch(setIsLoading(false)))
   }
 
   return (

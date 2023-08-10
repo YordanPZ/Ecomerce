@@ -6,19 +6,32 @@ import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
 import "../styles/Home.css"
 import { Link } from "react-router-dom"
+import { addToCartThunk } from "../store/slices/cartSlice"
+import { useDispatch } from "react-redux"
 
 function Product({ product }) {
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    const item = {
+      quantity: 1,
+      productId: product.id
+    }
+    dispatch(addToCartThunk(item))
+  }
+
   return (
     <li>
       <Card className="product__card" sx={{ maxWidth: 400, maxHeight: 400 }}>
         <Link to={`/product/${product.id}`}>
-          <CardMedia
-            component="img"
-            alt={product.title}
-            height="140"
-            image={product?.images?.[0].url}
-            className="product__img"
-          />
+          <div className="product__img--container">
+            <img
+              className="product__img"
+              src={product?.images?.[0].url}
+              alt=""
+            />
+          </div>
+
           <CardContent>
             <Typography
               gutterBottom
@@ -32,13 +45,8 @@ function Product({ product }) {
           </CardContent>
         </Link>
         <CardActions>
-          <Button
-            onClick={() => {
-              console.log("BEUANSS")
-            }}
-            size="small"
-          >
-            Añadir al carrito
+          <Button onClick={addToCart} size="small">
+            Add to cart
           </Button>
         </CardActions>
       </Card>

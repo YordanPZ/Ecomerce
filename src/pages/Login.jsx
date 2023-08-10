@@ -1,11 +1,32 @@
+import { useDispatch } from "react-redux"
+import axios from "axios"
 import "../styles/Login.css"
 import { useForm } from "react-hook-form"
+import { Link, useNavigate } from "react-router-dom"
+import { setIsLoading } from "../store/slices/isLoadingSlice"
 
 function Login() {
   const { register, handleSubmit } = useForm()
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const submit = (data) => {
-    console.log(data)
+    dispatch(setIsLoading(true))
+
+    axios
+      .post("https://e-commerce-api-v2.academlo.tech/api/v1/users/login", data)
+      .then((resp) => {
+        //Almacenar el token en el localstorage
+        //localstorage.setItem(nombre, valorAAlmacenar)
+        localStorage.setItem("token", resp.data.token)
+        navigate("/")
+      })
+      .catch((err) => {
+        if (err.response.status === 401) {
+          alert("Credenciales incorrectas")
+        }
+      })
+      .finally(() => dispatch(setIsLoading(false)))
   }
 
   return (
@@ -13,7 +34,11 @@ function Login() {
       <div className="login-container">
         <form onSubmit={handleSubmit(submit)} className="form">
           <p id="heading">Login</p>
-
+          <div style={{ textAlign: "center",fontSize:10 }}>
+            <p>Puedes probar con estas creedenciales</p>
+            <p> john@gmail.com </p>
+            <p>john1234</p>
+          </div>
           <div className="field">
             <svg
               className="input-icon"
@@ -55,15 +80,11 @@ function Login() {
             <button type="submit" className="button1">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </button>
-            <button
-              type="button"
-              onClick={() => {
-                console.log("Buenas")
-              }}
-              className="button2"
-            >
-              Sign Up
-            </button>
+            <Link to={"/singup"}>
+              <button type="button" className="button2">
+                Sign Up
+              </button>
+            </Link>
           </div>
         </form>
       </div>

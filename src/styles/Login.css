@@ -10,10 +10,14 @@
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 0.4em;
-    background-color: #171717;
     border-radius: 25px;
     transition: .4s ease-in-out;
     transform: scale(1.6);
+    background: rgba(23, 23, 23, 0.715);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.9px);
+    -webkit-backdrop-filter: blur(9.9px);
 }
 .login-container{
     width: 100%;
@@ -23,7 +27,7 @@
 }
 #heading {
     text-align: center;
-    margin: 2em;
+    margin: 2em 2em 0.5em 2em;
     color: rgb(255, 255, 255);
     font-size: 1.2em;
 }
@@ -37,7 +41,7 @@
     border: none;
     outline: none;
     color: white;
-    background-color: #171717;
+    background: rgba(23, 23, 23, 0.715);
     box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
 }
 .input-icon {

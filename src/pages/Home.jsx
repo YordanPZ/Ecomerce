@@ -20,6 +20,7 @@ function Home() {
     dispatch(getProductsThunk())
     getCategories()
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const getCategories = () => {
@@ -34,14 +35,14 @@ function Home() {
   )
   const handleSubmit = (e) => {
     e.preventDefault()
+
     dispatch(filteredProductsByNameThunk(search))
   }
-  console.log(search)
 
   return (
     <>
       <main className="main__home">
-        <h1>Productos</h1>
+        <h1>Ecommerce</h1>
         <section className="main__discounts">
           <div className="main__discounts--container">
             <div className="main__discounts--content">
@@ -63,7 +64,7 @@ function Home() {
         </section>
         <section className="main__products">
           <div className="main__products--categories">
-            <h4>Categorias</h4>
+            <h4>Categories</h4>
             <ul className="main__category--list">
               <li
                 className="main__category--item"
