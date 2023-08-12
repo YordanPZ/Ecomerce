@@ -30,7 +30,6 @@ function Purchases() {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  console.log(myPurchases)
 
   return (
     <main className="main__purchases">

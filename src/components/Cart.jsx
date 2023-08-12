@@ -31,7 +31,6 @@ export default function TransitionsModal({ open, setOpen }) {
       dispatch(updatePurchasesTunk(product.id, product.quantity - 1))
     }
   }
-  console.log(cart)
 
   return (
     <React.Fragment>
