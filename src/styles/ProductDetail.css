@@ -200,7 +200,7 @@
     }
     .section__productDetail{
         margin: 1rem 1.5rem;
-        padding: 0 2rem;
+        padding: 0;
         margin-top: 5rem;
     }
 }
