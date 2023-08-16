@@ -35,7 +35,6 @@ function Home() {
   )
   const handleSubmit = (e) => {
     e.preventDefault()
-
     dispatch(filteredProductsByNameThunk(search))
   }
 
@@ -87,30 +86,34 @@ function Home() {
             </ul>
           </div>
           <div className="main__products--container">
-            <div>
+            <div className="main__produts--search-bar">
               <Box
                 component="form"
                 sx={{
-                  "& > :not(style)": { m: 1, width: "30%" }
+                  "& > :not(style)": { m: 1 }
                 }}
                 noValidate
+                className="form__search--container"
                 autoComplete="off"
                 onSubmit={handleSubmit}
               >
                 <TextField
                   id="filled-basic"
                   label="Search Products"
+                  className="form__search"
                   variant="filled"
                   onChange={(e) => setSearch(e.target.value)}
                   value={search}
                 />
               </Box>
             </div>
-            <ul className="main__products--list">
-              {products?.map((item) => (
-                <Product product={item} key={item.id} />
-              ))}
-            </ul>
+            <div className="main__products--content">
+              <ul className="main__products--list">
+                {products?.map((item) => (
+                  <Product product={item} key={item.id} />
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
       </main>

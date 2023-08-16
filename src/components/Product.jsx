@@ -21,8 +21,8 @@ function Product({ product }) {
   }
 
   return (
-    <li>
-      <Card className="product__card" sx={{ maxWidth: 400, maxHeight: 400 }}>
+    <li className="product__list__container">
+      <div className="product__card">
         <Link to={`/product/${product.id}`}>
           <div className="product__img--container">
             <img
@@ -32,7 +32,7 @@ function Product({ product }) {
             />
           </div>
 
-          <CardContent>
+          <CardContent className="product__title--item">
             <Typography
               gutterBottom
               variant="h5"
@@ -49,7 +49,7 @@ function Product({ product }) {
             Add to cart
           </Button>
         </CardActions>
-      </Card>
+      </div>
     </li>
   )
 }

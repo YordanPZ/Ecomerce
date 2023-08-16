@@ -23,3 +23,9 @@
     overflow: hidden;
     object-fit: contain;
 }
+.gallery__container{
+    color: #494949;
+    width: 500px;
+    display:flex;
+    justify-content:center
+}

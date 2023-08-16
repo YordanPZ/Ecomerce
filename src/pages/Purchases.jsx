@@ -45,7 +45,7 @@ function Purchases() {
               <div className="purchase__price-container">
                 <p className="purchase__title">{purchase.product.title}</p>
                 <p className="purchase__title">{purchase.product.price}$</p>
-                <p className="purchase__title">Cantidad:{purchase.quantity}</p>
+                <p className="purchase__title">Quantity:{purchase.quantity}</p>
               </div>
             </div>
           </li>

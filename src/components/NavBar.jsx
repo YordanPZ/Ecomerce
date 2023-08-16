@@ -11,7 +11,6 @@ import Container from "@mui/material/Container"
 import Button from "@mui/material/Button"
 import Tooltip from "@mui/material/Tooltip"
 import MenuItem from "@mui/material/MenuItem"
-import AdbIcon from "@mui/icons-material/Adb"
 import { Link } from "react-router-dom"
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined"
 import Cart from "./Cart"
@@ -55,7 +54,7 @@ function NavBar() {
       <AppBar position="static" color="transparent">
         <Container maxWidth="xxl">
           <Toolbar disableGutters>
-            <img src="/cart.png" height={100} alt="" />
+            <img className="logo" src="/cart.png" height={100} alt="" />
             <Typography
               variant="h6"
               noWrap
@@ -105,12 +104,13 @@ function NavBar() {
               >
                 {pages.map((page, index) => (
                   <MenuItem key={index}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Link to={url[index]}>
+                      <Typography textAlign="center">{page}</Typography>
+                    </Link>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
-            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
             <Typography
               variant="h5"
               noWrap
@@ -142,7 +142,6 @@ function NavBar() {
                 </Button>
               ))}
             </Box>
-
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip
                 style={{

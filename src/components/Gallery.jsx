@@ -9,12 +9,9 @@ const SecondExample = ({ product }) => {
   })
   return (
     <div
-      style={{
-        color: "#494949",
-        minWidth: 600,
-      }}
+      className="gallery__container"
     >
-      <Carousel className="SecondExample" {...DefaultSettingsT}>
+      <Carousel  className="SecondExample" {...DefaultSettingsT}>
         {items?.map((item, index) => (
           <Paper
             key={index}

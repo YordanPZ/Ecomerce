@@ -34,10 +34,10 @@ function Login() {
       <div className="login-container">
         <form onSubmit={handleSubmit(submit)} className="form">
           <p id="heading">Login</p>
-          <div style={{ textAlign: "center",fontSize:10 }}>
-            <p>Puedes probar con estas creedenciales</p>
-            <p> john@gmail.com </p>
-            <p>john1234</p>
+          <div className="suggestion">
+            <p>You can use: </p>
+            <p> Email: john@gmail.com </p>
+            <p>Password:john1234</p>
           </div>
           <div className="field">
             <svg

@@ -9,6 +9,7 @@
 .purchase__price-container{
     display: flex;
     justify-content: space-evenly;
+    gap: 1rem;
 }
 .purchases__list{
     margin-top: 3rem;
@@ -27,4 +28,17 @@
 }
 .purchase__title{
     font-size: 1.6rem;
+}
+@media (width<=500px){
+    .purchase__price-container{
+        flex-direction: column;
+    }
+    .purchase__title{
+        font-size: 1rem;
+    }
+    .purchase__date{
+        font-size: 1.2rem;
+        min-width: 200px;
+
+    }
 }

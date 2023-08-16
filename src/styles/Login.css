@@ -18,6 +18,7 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(9.9px);
     -webkit-backdrop-filter: blur(9.9px);
+    width: 100%;
 }
 .login-container{
     width: 100%;
@@ -107,3 +108,21 @@
     background-color: red;
     color: white;
 }
+.suggestion{
+    text-align: center;
+    font-size:10px;
+    background-color: #ffffff55;
+    border-radius: 30px;
+    padding: 10px 0;
+}
+@media (width<=500px){
+    .form {
+        transform: scale(1.2);
+    }
+}
+@media (width<=350px){
+    .form {
+        transform: scale(1);
+    }
+}
+
