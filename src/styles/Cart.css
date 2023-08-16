@@ -55,7 +55,7 @@
     font-size: 1.4rem;
 }
 .button {
-    --width: 100px;
+    --width: 130px;
     --height: 35px;
     --tooltip-height: 35px;
     --tooltip-width: 90px;

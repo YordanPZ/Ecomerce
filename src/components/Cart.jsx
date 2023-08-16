@@ -37,14 +37,11 @@ export default function TransitionsModal({ open, setOpen }) {
         sx={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "end",
+          justifyContent: "end"
         }}
       >
-        <Sheet
-          variant="outlined"
-          className="modal__container"
-        >
-          <ModalClose variant="outlined" />
+        <Sheet variant="outlined" className="modal__container">
+          <ModalClose sx={{ mt: 3 }} variant="outlined" />
           <Typography
             component="h2"
             id="close-modal-title"
