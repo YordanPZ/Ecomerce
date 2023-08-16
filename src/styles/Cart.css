@@ -149,6 +149,23 @@
     background-color: transparent;
     border: none;
 }
-
+.modal__container{
+    min-width: 400px;
+    max-width: 400px;
+    border-radius: 20px 0 0 20px;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+@media (width<=400px){
+    .modal__container{
+        min-width: 100%;
+        max-width: 100%;
+        border-radius: 0 0 0 0;
+    }
+}
 
 

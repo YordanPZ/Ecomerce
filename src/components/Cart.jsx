@@ -5,9 +5,6 @@ import Typography from "@mui/joy/Typography"
 import Sheet from "@mui/joy/Sheet"
 import { useDispatch, useSelector } from "react-redux"
 import "../styles/Cart.css"
-import axios from "axios"
-import getConfig from "../utils/getConfig"
-import { setIsLoading } from "../store/slices/isLoadingSlice"
 import { deleteProduct } from "../store/slices/cartSlice"
 import { updatePurchasesTunk } from "../store/slices/cartSlice"
 import { buyCartThunk } from "../store/slices/cartSlice"
@@ -19,9 +16,6 @@ export default function TransitionsModal({ open, setOpen }) {
     return acc + item.product.price * item.quantity
   }, 0)
 
-  const handleBuy = () => {
-    dispatch(setIsLoading(true))
-  }
   const incrementQuantity = (product) => {
     dispatch(updatePurchasesTunk(product.id, product.quantity + 1))
   }
@@ -43,22 +37,12 @@ export default function TransitionsModal({ open, setOpen }) {
         sx={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "end"
+          justifyContent: "end",
         }}
       >
         <Sheet
           variant="outlined"
-          sx={{
-            minWidth: 400,
-            maxWidth: 400,
-            borderRadius: "md",
-            p: 3,
-            minHeight: "100vh",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            flexWrap: "wrap"
-          }}
+          className="modal__container"
         >
           <ModalClose variant="outlined" />
           <Typography

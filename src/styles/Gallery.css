@@ -18,8 +18,8 @@
     text-transform: capitalize;
 }
 .gallery__img{
-    width: 400px; /* Ancho deseado */
-    height: 400px; /* Alto deseado */
+    width: 400px;
+    height: 400px;
     overflow: hidden;
     object-fit: contain;
 }

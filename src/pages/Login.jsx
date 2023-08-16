@@ -37,7 +37,7 @@ function Login() {
           <div className="suggestion">
             <p>You can use: </p>
             <p> Email: john@gmail.com </p>
-            <p>Password:john1234</p>
+            <p>Password: john1234</p>
           </div>
           <div className="field">
             <svg
