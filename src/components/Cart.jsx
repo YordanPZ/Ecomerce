@@ -13,8 +13,9 @@ export default function TransitionsModal({ open, setOpen }) {
   const cart = useSelector((state) => state.cart)
   const dispatch = useDispatch()
   const totalPrice = cart.reduce((acc, item) => {
-    return acc + item.product.price * item.quantity
+    return acc + item.product?.price * item.quantity
   }, 0)
+  console.log(cart)
 
   const incrementQuantity = (product) => {
     dispatch(updatePurchasesTunk(product.id, product.quantity + 1))
@@ -53,11 +54,11 @@ export default function TransitionsModal({ open, setOpen }) {
           </Typography>
           <main className="main__cart__container">
             {cart?.map((item) => (
-              <div className="main__cart" key={item.product.id}>
+              <div className="main__cart" key={item.product?.id}>
                 <div className="cart__container">
                   <img
-                    src={item.product.images[0].url}
-                    alt={item.product.title}
+                    src={item.product?.images[0].url}
+                    alt={item.product?.title}
                     className="cart__container--image"
                   />
                   <div className="cart__container--info">
@@ -67,7 +68,7 @@ export default function TransitionsModal({ open, setOpen }) {
                         level="h5"
                         textColor="inherit"
                       >
-                        {item.product.title}
+                        {item.product?.title}
                       </Typography>
                     </div>
                     <div className="quantity">
@@ -108,7 +109,7 @@ export default function TransitionsModal({ open, setOpen }) {
                     </svg>
                   </button>
                   <Typography level="h5" textColor="inherit">
-                    ${item.product.price}
+                    ${item.product?.price}
                   </Typography>
                 </div>
               </div>

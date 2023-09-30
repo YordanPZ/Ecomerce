@@ -25,7 +25,7 @@ function Home() {
 
   const getCategories = () => {
     axios
-      .get("https://e-commerce-api-v2.academlo.tech/api/v1/categories")
+      .get("https://ecommerceapi-vscj.onrender.com/categories")
       .then((res) => setCategories(res.data))
       .catch((err) => console.log(err))
   }

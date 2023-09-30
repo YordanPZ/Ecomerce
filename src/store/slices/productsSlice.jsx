@@ -20,7 +20,7 @@ export const getProductsThunk = () => (dispatch) => {
   dispatch(setIsLoading(true))
 
   axios
-    .get("https://e-commerce-api-v2.academlo.tech/api/v1/products")
+    .get("https://ecommerceapi-vscj.onrender.com/products")
     .then((resp) => dispatch(setProducts(resp.data)))
     .catch((err) => console.log(err))
     .finally(() => dispatch(setIsLoading(false)))
@@ -29,19 +29,15 @@ export const getProductsThunk = () => (dispatch) => {
 export const filteredProductsByCategoryThunk = (id) => (dispatch) => {
   dispatch(setIsLoading(true))
   axios
-    .get(
-      `https://e-commerce-api-v2.academlo.tech/api/v1//products?categoryId=${id}`
-    )
+    .get(`https://ecommerceapi-vscj.onrender.com/products/category_id/${id}`)
     .then((res) => dispatch(setProducts(res.data)))
     .catch((err) => console.log(err))
     .finally(() => dispatch(setIsLoading(false)))
 }
-export const filteredProductsByNameThunk = (name) => (dispatch) => {
+export const filteredProductsByNameThunk = (title) => (dispatch) => {
   dispatch(setIsLoading(true))
   axios
-    .get(
-      `https://e-commerce-api-v2.academlo.tech/api/v1/products?title=${name}`
-    )
+    .get("https://ecommerceapi-vscj.onrender.com/products/name", {title})
     .then((res) => {
       if (res.data.length === 0) {
         dispatch(getProductsThunk())

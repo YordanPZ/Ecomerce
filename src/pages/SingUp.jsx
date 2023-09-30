@@ -16,7 +16,7 @@ function SingUp() {
     dispatch(setIsLoading(true))
 
     axios
-      .post("https://e-commerce-api-v2.academlo.tech/api/v1/users", data)
+      .post("https://ecommerceapi-vscj.onrender.com/users", data)
       .then(() => {
         toast.success("Usuario creado correctamente")
         navigate("/login")

@@ -20,32 +20,30 @@ function Purchases() {
     }
     dispatch(setIsLoading(true))
     axios
-      .get(
-        "https://e-commerce-api-v2.academlo.tech/api/v1/purchases",
-        getConfig()
-      )
+      .get("https://ecommerceapi-vscj.onrender.com/purchases", getConfig())
       .then((res) => setMyPurchases(res.data))
       .catch((err) => console.log(err))
       .finally(() => dispatch(setIsLoading(false)))
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+  console.log(myPurchases)
 
   return (
     <main className="main__purchases">
       <h1>My Purchases</h1>
       <ul className="purchases__list">
         {myPurchases?.map((purchase) => (
-          <li key={purchase.product.id}>
+          <li key={purchase.product?.id}>
             <div className="purchase__info">
               <p className="purchase__date">
                 {purchase.createdAt.slice(0, 10)}
               </p>
               <hr className="purchase__line" />
               <div className="purchase__price-container">
-                <p className="purchase__title">{purchase.product.title}</p>
-                <p className="purchase__title">{purchase.product.price}$</p>
-                <p className="purchase__title">Quantity:{purchase.quantity}</p>
+                <p className="purchase__title">{purchase.title}</p>
+                <p className="purchase__title">{purchase.price}$</p>
+                <p className="purchase__title">Quantity:{purchase?.quantity}</p>
               </div>
             </div>
           </li>

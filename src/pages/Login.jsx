@@ -4,6 +4,7 @@ import "../styles/Login.css"
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import { setIsLoading } from "../store/slices/isLoadingSlice"
+import { toast } from "sonner"
 
 function Login() {
   const { register, handleSubmit } = useForm()
@@ -14,12 +15,15 @@ function Login() {
     dispatch(setIsLoading(true))
 
     axios
-      .post("https://e-commerce-api-v2.academlo.tech/api/v1/users/login", data)
+      .post("https://ecommerceapi-vscj.onrender.com/users/login", data)
       .then((resp) => {
         //Almacenar el token en el localstorage
         //localstorage.setItem(nombre, valorAAlmacenar)
         localStorage.setItem("token", resp.data.token)
         navigate("/")
+        toast.success(
+          `Bienvenid@ ${resp.data.user.firstName} ${resp.data.user.lastName}`
+        )
       })
       .catch((err) => {
         if (err.response.status === 401) {
@@ -36,8 +40,8 @@ function Login() {
           <p id="heading">Login</p>
           <div className="suggestion">
             <p>You can use: </p>
-            <p> Email: john@gmail.com </p>
-            <p>Password: john1234</p>
+            <p> Email: yordanpz@hotmail.com</p>
+            <p>Password: 1234</p>
           </div>
           <div className="field">
             <svg

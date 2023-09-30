@@ -17,7 +17,7 @@ export const cartSlice = createSlice({
 export const getCartThunk = () => (dispatch) => {
   dispatch(setIsLoading(true))
   axios
-    .get("https://e-commerce-api-v2.academlo.tech/api/v1/cart", getConfig())
+    .get("https://ecommerceapi-vscj.onrender.com/cart", getConfig())
     .then((res) => dispatch(setCart(res.data)))
     .catch((err) => console.log(err))
     .finally(() => dispatch(setIsLoading(false)))
@@ -26,11 +26,7 @@ export const getCartThunk = () => (dispatch) => {
 export const addToCartThunk = (data) => (dispatch) => {
   dispatch(setIsLoading(true))
   axios
-    .post(
-      "https://e-commerce-api-v2.academlo.tech/api/v1/cart",
-      data,
-      getConfig()
-    )
+    .post("https://ecommerceapi-vscj.onrender.com/cart", data, getConfig())
     .then(() => toast.success("Se agrego correctamente"))
     .catch((err) => console.log(err))
     .finally(() => dispatch(setIsLoading(false)))
@@ -40,7 +36,7 @@ export const deleteProduct = (item) => (dispatch) => {
   dispatch(setIsLoading(true))
   axios
     .delete(
-      `https://e-commerce-api-v2.academlo.tech/api/v1/cart/${item.id}`,
+      `https://ecommerceapi-vscj.onrender.com/cart/${item.id}`,
       getConfig()
     )
     .then(() => {
@@ -54,11 +50,7 @@ export const deleteProduct = (item) => (dispatch) => {
 export const buyCartThunk = () => (dispatch) => {
   dispatch(setIsLoading(true))
   axios
-    .post(
-      "https://e-commerce-api-v2.academlo.tech/api/v1/purchases",
-      {},
-      getConfig()
-    )
+    .post("https://ecommerceapi-vscj.onrender.com/purchases", {}, getConfig())
     .then(() => {
       dispatch(getCartThunk())
       toast.success("Compra realizada, puedes verla en Purchases")
@@ -75,7 +67,7 @@ export const updatePurchasesTunk = (id, quantity) => (dispatch) => {
   }
   axios
     .put(
-      `https://e-commerce-api-v2.academlo.tech/api/v1/cart/${id} `,
+      `https://ecommerceapi-vscj.onrender.com/cart/${id} `,
       body,
       getConfig()
     )

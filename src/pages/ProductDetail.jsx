@@ -26,10 +26,10 @@ function ProductDetail() {
   const getDetail = () => {
     dispatch(setIsLoading(true))
     axios
-      .get(`https://e-commerce-api-v2.academlo.tech/api/v1/products/${id}`)
+      .get(`https://ecommerceapi-vscj.onrender.com/products/${id}`)
       .then((res) => {
         setProductDetail(res.data)
-        dispatch(filteredProductsByCategoryThunk(res.data.category.id))
+        dispatch(filteredProductsByCategoryThunk(res.data.category?.id))
       })
       .catch((err) => console.log(err))
       .finally(() => dispatch(setIsLoading(false)))
