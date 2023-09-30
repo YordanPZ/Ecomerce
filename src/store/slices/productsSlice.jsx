@@ -36,8 +36,11 @@ export const filteredProductsByCategoryThunk = (id) => (dispatch) => {
 }
 export const filteredProductsByNameThunk = (title) => (dispatch) => {
   dispatch(setIsLoading(true))
+  const body = {
+    title: title
+  }
   axios
-    .get("https://ecommerceapi-vscj.onrender.com/products/name", {title})
+    .post("https://ecommerceapi-vscj.onrender.com/products/name",body)
     .then((res) => {
       if (res.data.length === 0) {
         dispatch(getProductsThunk())

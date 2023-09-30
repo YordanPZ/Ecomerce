@@ -27,7 +27,7 @@ function Product({ product }) {
           <div className="product__img--container">
             <img
               className="product__img"
-              src={product?.images?.[0].url}
+              src={product?.images?.[0]?.url}
               alt=""
             />
           </div>
